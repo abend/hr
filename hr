@@ -24,7 +24,7 @@
 COLS="$(tput cols)"
 LOCALE="$(locale charmap)"
 
-if [[ "$COLS" -le 0 ]] ; then
+if (( COLS <= 0 )) ; then
     COLS="${COLUMNS:-80}"
 fi
 
@@ -38,7 +38,7 @@ hr() {
     local WORD="$1"
     if [[ -n "$WORD" ]] ; then
         local LINE=''
-        while (( ${#LINE} < "$COLS" ))
+        while (( ${#LINE} < COLS ))
         do
             LINE="$LINE$WORD"
         done
