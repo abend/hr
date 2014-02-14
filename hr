@@ -22,8 +22,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 COLS="$(tput cols)"
-LOCALE="$(locale charmap)"
-
 if (( COLS <= 0 )) ; then
     COLS="${COLUMNS:-80}"
 fi
