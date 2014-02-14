@@ -35,7 +35,11 @@ hr() {
             LINE="$LINE$WORD"
         done
 
-        echo "${LINE:0:$COLS}"
+        # See http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+        COLOR="$(tput setaf 11)"
+        COLOR_NORM="$(tput setaf 9)"
+
+        echo -e "${COLOR}${LINE:0:$COLS}${COLOR_NORM}"
     fi
 }
 
